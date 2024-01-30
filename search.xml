@@ -4,13 +4,25 @@
   
     
     <entry>
-      <title></title>
+      <title>奇游加速器导致L2TP失效</title>
       <link href="/2024/01/30/qi-you-jia-su-qi-dao-zhi-l2tp-shi-xiao/"/>
       <url>/2024/01/30/qi-you-jia-su-qi-dao-zhi-l2tp-shi-xiao/</url>
       
         <content type="html"><![CDATA[<h2 id="奇游加速器导致L2TP失效"><a href="#奇游加速器导致L2TP失效" class="headerlink" title="奇游加速器导致L2TP失效"></a>奇游加速器导致L2TP失效</h2><p><strong>简介</strong>：安装奇游加速器加速后，windows的L2TP的L2TP协议会失效。</p><h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>可以使用修改注册表的方式恢复</p><p><strong>链接</strong>：<a href="https://blog.csdn.net/ztservice/article/details/111239445">https://blog.csdn.net/ztservice/article/details/111239445</a></p><p>1、按win+R键打开运行输入regedit，打开注册表</p><p>2、找到：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\Parameters</p><p><img src="/2024/01/30/qi-you-jia-su-qi-dao-zhi-l2tp-shi-xiao/20201215201836506.jpg"></p><p>3、找到：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PolicyAgent</p><p><img src="/2024/01/30/qi-you-jia-su-qi-dao-zhi-l2tp-shi-xiao/20201215201904828.jpg"></p><p>如果没有这2个选项，右键新建32位DWORD值</p><p>将注册表导出下次双击运行即可修改：</p><p><img src="/2024/01/30/qi-you-jia-su-qi-dao-zhi-l2tp-shi-xiao/image-20240109173757296.png"></p><p>4、重启计算机。</p>]]></content>
       
       
+      <categories>
+          
+          <category> win10小毛病 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
       
     </entry>
     
