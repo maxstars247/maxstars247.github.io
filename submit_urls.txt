@@ -1,3 +1,4 @@
+http://maxstars247.github.io/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/
 http://maxstars247.github.io/2021/11/05/hexo-da-jian-quan-jie/
 http://maxstars247.github.io/2024/01/30/amd-xian-qia-qu-dong-geng-xin-dao-zhi-kai-ji-shi-chang-yi-chang/
 http://maxstars247.github.io/2024/01/30/qi-you-jia-su-qi-dao-zhi-l2tp-shi-xiao/
@@ -7,4 +8,3 @@ http://maxstars247.github.io/2022/10/30/zhi-zuo-ni-de-di-yi-ge-wei-pe/
 http://maxstars247.github.io/2023/11/01/sdr-bi-ji/
 http://maxstars247.github.io/2023/09/24/bi-lan-hang-xian-chai-bao-ji-lu/
 http://maxstars247.github.io/2023/06/10/vue-kuang-jia-xue-xi/
-http://maxstars247.github.io/2023/05/08/stable-diffusion-bi-ji/
