@@ -414,51 +414,52 @@
 <h4 id="查看GK-2A-GEO-KOMPSAT-2A-信息"><a href="#查看GK-2A-GEO-KOMPSAT-2A-信息" class="headerlink" title="查看GK-2A(GEO-KOMPSAT-2A)信息"></a>查看GK-2A(GEO-KOMPSAT-2A)信息</h4><p><strong>简介</strong>：在<strong>satdump</strong>和<strong>oscar</strong>上都可以看到查找<code>GK-2A</code>卫星的信息，我们主要在这两个网站中获取卫星的<strong>频率</strong>和<strong>发送模式</strong>：</p>
 <p><strong>satdump</strong>进入<a target="_blank" rel="noopener" href="https://www.satdump.org/Satellite-List/">satelite-list</a>查看：</p>
 <p><strong>点击链接进入satdump的satlite-list列表</strong>：</p>
-<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231205144834884.png"></p>
+<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231205144834884-17072159761492.png"></p>
 <p><strong>在satlite-list中查找GK-2A</strong>：</p>
-<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20240206173055832.png"></p>
-<p>我们发现<code>GK-2A</code>支持<code>LRPT</code>，<code>HRPT</code>和<code>CDAS</code>，这次我们要接收<code>LRPT</code>，所以我们查看<code>LRPT</code>的**状态(Status)<strong>。这里显示状态是</strong>活跃的(Active)**，表明我们可以收到信号。同时记录<code>LRPT</code>的频率：1692.14MHz</p>
-<p><strong>oscar</strong>进入<a target="_blank" rel="noopener" href="https://space.oscar.wmo.int/satellites%E8%BF%99%E9%87%8C%E5%90%8E%E7%82%B9%E5%87%BB%60filter">https://space.oscar.wmo.int/satellites这里后点击`filter</a> table<code>，然后点击</code>GEO&#96;即可</p>
-<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231205145806370.png"></p>
+<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20240206173055832-17072159761481.png"></p>
+<p>我们发现<code>GK-2A</code>支持<code>LRPT</code>，<code>HRPT</code>和<code>CDAS</code>，这次我们要接收<code>LRPT</code>，所以我们查看<code>LRPT</code>的<strong>状态</strong>(Status)。这里显示状态是<strong>活跃的</strong>(Active)，表明我们可以收到信号。同时记录<code>LRPT</code>的频率：1692.14MHz</p>
+<p><strong>oscar链接</strong>：<a target="_blank" rel="noopener" href="https://space.oscar.wmo.int/satellites">https://space.oscar.wmo.int/satellites</a></p>
+<p>这里后点击<code>filter table</code>，然后点击<code>GEO</code>即可：</p>
+<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231205145806370-17072159761493.png"></p>
 <h4 id="定位GK-2A卫星"><a href="#定位GK-2A卫星" class="headerlink" title="定位GK-2A卫星"></a>定位GK-2A卫星</h4><p><strong>在地图上查找卫星</strong>：<a target="_blank" rel="noopener" href="http://www.dishpointer.com/">www.dishpointer.com</a></p>
 <p><strong>视频教程</strong>：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wV4y1e7mi">https://www.bilibili.com/video/BV1wV4y1e7mi</a></p>
 <p><strong>简介</strong>：进入网址后找到<code>GK-2A</code>，<code>location</code>输入你所在的城市中文名称即可。</p>
 <p><strong>查找完成后会显示如下图片</strong>：</p>
-<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231012163413043.png"></p>
+<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231012163413043-17072159761494.png"></p>
 <p>记录卫星的仰角和方位角</p>
 <p>由于同步卫星位置不变，所以可以根据得到的角度来调整天线对准卫星。</p>
 <h4 id="安装Zadig驱动"><a href="#安装Zadig驱动" class="headerlink" title="安装Zadig驱动"></a>安装Zadig驱动</h4><p><strong>链接</strong>：<a target="_blank" rel="noopener" href="https://zadig.akeo.ie/downloads/">https://zadig.akeo.ie/downloads/</a></p>
 <p><strong>简介</strong>：直接下载最新的zadig-2.5版本，插入sdr后选择sdr运行即可。为了防止安装错误导致USB驱动失效，建议百度如何安装zadig</p>
-<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231012164831209.png"></p>
+<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231012164831209-17072159761495.png"></p>
 <h4 id="下载satdump并安装GK-2A卫星解码"><a href="#下载satdump并安装GK-2A卫星解码" class="headerlink" title="下载satdump并安装GK-2A卫星解码"></a>下载satdump并安装GK-2A卫星解码</h4><p><strong>下载satdump</strong>：<a target="_blank" rel="noopener" href="https://www.satdump.org/download/">https://www.satdump.org/download/</a></p>
 <p><strong>简介</strong>：下载好<strong>satdump</strong>后进入软件<code>resources</code>新建<code>GEO卫星</code>文件夹，将解码软件放入即可。我这里使用<strong>1.1.2</strong>版本。</p>
-<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231012170024343.png"></p>
+<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231012170024343-17072159761496.png"></p>
 <h4 id="架设接收设备"><a href="#架设接收设备" class="headerlink" title="架设接收设备"></a>架设接收设备</h4><p><strong>简介</strong>：这里<code>LNA</code>放大器和滤波器可以买2合1的，也可以分开买。带通滤波后连接天线。转接头不需要买软质的线，会损失一定的信号，直接买硬质的转接头即可：</p>
-<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231012170641825.png"></p>
+<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231012170641825-17072159761497.png"></p>
 <p><strong>接收过程中需要竖向架设天线</strong>：</p>
-<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/IMG_20231130_120606.jpg"></p>
+<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/IMG_20231130_120606-17072159761498.jpg"></p>
 <p><strong>注意</strong>：如果是<code>SAWBird+GOES</code>，相当于一个<strong>带通滤波+LNA</strong>，但是还是要加添加一个LNA放大器，不然信号接收很差，<strong>信噪比</strong>只有<code>7-9</code>左右，使用<code>satdump</code>接收会产生<strong>少量</strong>裂开的图像：</p>
-<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/IMG_FD_013_IR105_20231120_021006-FC.jpg"></p>
+<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/IMG_FD_013_IR105_20231120_021006-FC-17072159761499.jpg"></p>
 <p><strong>注意</strong>：由于<code>SAWBird+GOES</code>的设计问题，使用过程会在<code>output</code>端输出直流，需要在<code>output</code>端加上<strong>隔直器</strong>来防止<code>SDR</code>被烧坏。</p>
 <p><strong>详细内容可在官网找到</strong>：<a target="_blank" rel="noopener" href="https://www.nooelec.com/store/sdr/sdr-addons/sawbird/sawbird-plus-goes-302.html">https://www.nooelec.com/store/sdr/sdr-addons/sawbird/sawbird-plus-goes-302.html</a></p>
-<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20240203225656412.png"></p>
+<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20240203225656412-170721597614910.png"></p>
 <p>这里的<code>DC block</code>就是<strong>隔直器</strong>。不添加隔直器会出现信号波动问题，详细情况可看接收 <strong>FENGYUN-4A</strong> -&gt; <strong>信号波动问题</strong>篇。</p>
 <h4 id="设置satdump"><a href="#设置satdump" class="headerlink" title="设置satdump"></a>设置satdump</h4><p><strong>简介</strong>：双击运行即可。选择<code>Recorder</code>，频率调整至<code>1692.14Mhz</code>，带宽调整为<code>250kbps</code>。不要勾选<code>AGC</code>，会影响锁相环，直接把<code>LNA Gain</code>调到最大，点击<code>start</code>，此时信号太弱不能出现频谱：</p>
-<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231012173223590.png"></p>
+<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231012173223590-170721597614911.png"></p>
 <p>调整<code>FFT Min</code>至频谱出现：</p>
-<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231012173315248.png"></p>
+<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231012173315248-170721597614912.png"></p>
 <p>在<code>Processing</code>中搜索<code>GK-2A LRIT</code>，点击<code>start</code>：</p>
-<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231120204628526.png"></p>
+<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231120204628526-170721597614913.png"></p>
 <p>在每个小时的0，10，20，30，40，50分钟时，频谱会发生变化，此时说明卫星正在传输图像。</p>
 <p>接收到的图片会自动保存在<code>bin/live_output</code>文件夹中：</p>
-<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231012174223682.png"></p>
+<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20231012174223682-170721597614914.png"></p>
 <h4 id="转化图片"><a href="#转化图片" class="headerlink" title="转化图片"></a>转化图片</h4><p><strong>简介</strong>：接收到的图像是黑白的，可以通过脚本进行转化，转化脚本为<a target="_blank" rel="noopener" href="https://github.com/nullpainter/sanchez">sanchez</a>，操作方式按照<a target="_blank" rel="noopener" href="https://github.com/nullpainter/sanchez/wiki">wiki</a>描述的操作即可。</p>
 <p><strong>sanchez链接</strong>：<a target="_blank" rel="noopener" href="https://github.com/nullpainter/sanchez">https://github.com/nullpainter/sanchez</a></p>
 <h5 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h5><p><strong>简介</strong>：考虑到很多HAM可能第一次使用github，不懂如何操作，这里介绍一下如何下载吧。</p>
 <p><strong>进入上述链接后点击Releases内的版本号</strong>：</p>
-<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20240206171246906.png"></p>
+<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20240206171246906-170721597615015.png"></p>
 <p><strong>下载windows版本即可</strong>：</p>
-<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20240206171554367.png"></p>
+<p><img src="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/image-20240206171554367-170721597615016.png"></p>
 <p>下载好后解压文件，即可进入转换步骤。</p>
 <h5 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h5><p><strong>简介</strong>：在sanchez项目内使用CMD或powershell中输入如下命令</p>
 <p><strong>转换图片命令</strong>：</p>
