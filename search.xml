@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>登机牌中的信息</title>
+      <link href="/2024/02/21/deng-ji-pai-zhong-de-xin-xi/"/>
+      <url>/2024/02/21/deng-ji-pai-zhong-de-xin-xi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="登机牌中的信息"><a href="#登机牌中的信息" class="headerlink" title="登机牌中的信息"></a>登机牌中的信息</h2><p><strong>简介</strong>：在某次上网络安全课时，我们老师特地放出了一张机票的图，这是我第一次在课堂上接触社会工学，原来从机票上可以获得的信息有那么多。经过接触民航无线电的过程，我又强化了一下这个内容，现在正好可以分享出来。</p><h3 id="了解一张登机牌"><a href="#了解一张登机牌" class="headerlink" title="了解一张登机牌"></a>了解一张登机牌</h3><p><strong>介绍</strong>：一张登机牌的信息会出现航班号、日期、舱位、序号、座位号、始发地、目的地(到达站)、姓名。也有可能出现登机时间，登机口等，座位等。</p><p><img src="/2024/02/21/deng-ji-pai-zhong-de-xin-xi/4e3a1f23e7234a66ad2472517dc690db.jpeg"></p><p>分析一张登机牌，最主要的信息无疑是确认这个乘客到底是什么时候登机的，他要去什么地方，以及出发时间和到达时间分别是什么。这时候，分析**航班号(flight)**是主要的手段。</p><h3 id="航班号"><a href="#航班号" class="headerlink" title="航班号"></a>航班号</h3><p><strong>简介</strong>：航班号包含了一个航班的所有信息，航班号中可以分析出航司、承运公司总部位置、承运公司所在地区、去程还是回程。</p><p><strong>参考链接</strong>：<a href="https://zhuanlan.zhihu.com/p/91945737">https://zhuanlan.zhihu.com/p/91945737</a></p><p><strong>例如上图中的航班号</strong>：MU2357</p><p><strong>这里可以将航班号拆分成</strong>： MU 23 57</p><p><strong>MU</strong>：中国东方航空公司</p><p><strong>23</strong>：反映飞行区域</p><p><strong>57</strong>：反映是第几次的飞行，最后一位奇数代表去程，是偶数代表返程</p><p>这里我们并不需要严格的记住航班号各个数字的意义，我们只需要在相关的网站上查找就行。</p><h4 id="FlightAware查找"><a href="#FlightAware查找" class="headerlink" title="FlightAware查找"></a>FlightAware查找</h4><p><strong>简介</strong>：FlightAware是全球实时航班定位系统，你可以在这里输入航班号查询目前该航班的飞行状态</p><p><strong>链接</strong>：<a href="https://www.flightaware.com/">https://www.flightaware.com</a></p><p>当我们直接输入<strong>MU2357</strong>进行查找，我们就能获得这个航班目前的航行状态：</p><p><img src="/2024/02/21/deng-ji-pai-zhong-de-xin-xi/image-20240221185302505.png"></p><p><strong>注意</strong>：<code>FlightAware</code>有时候并不能查到这个航班，因为航司的字母可能会发生变化，你需要注入<code>FlightAware</code>能够识别到的航司，例如这里可以自动转换成<code>CES2357</code>。</p><p>由于<code>FlightAware</code>的系统是采用民用上传数据的方式接收飞机的<strong>ADS-B</strong>信号，飞机的飞行数据可能并不会实时同步。并且<code>FlightAware</code>的公开的数据涉嫌泄露国家机密，例如某个总统的航班飞行记录，所以不要参与接收相关数据，可能会触及法律问题。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 社工 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>接收GEO卫星GK-2A笔记</title>
       <link href="/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/"/>
       <url>/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/</url>
