@@ -1,3 +1,4 @@
+http://maxstars247.github.io/2024/04/15/flask-bi-ji/
 http://maxstars247.github.io/2024/02/21/deng-ji-pai-zhong-de-xin-xi/
 http://maxstars247.github.io/2024/02/06/jie-shou-geo-wei-xing-gk-2a-bi-ji/
 http://maxstars247.github.io/2021/11/05/hexo-da-jian-quan-jie/
@@ -7,4 +8,3 @@ http://maxstars247.github.io/2022/12/07/ji-qi-xue-xi-bi-ji/
 http://maxstars247.github.io/2023/12/10/mix2s-shua-ru-peng-pai-os/
 http://maxstars247.github.io/2022/10/30/zhi-zuo-ni-de-di-yi-ge-wei-pe/
 http://maxstars247.github.io/2023/11/01/sdr-bi-ji/
-http://maxstars247.github.io/2023/09/24/bi-lan-hang-xian-chai-bao-ji-lu/
