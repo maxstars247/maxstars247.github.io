@@ -986,54 +986,7 @@ $(function () {
     </a>
 </div>
 
-    <!-- <!-- 下载图片按钮 -->
-<div class="dl-img">
-    <a class="btn-floating btn-large waves-effect waves-light" onclick="downloadimg()" title="下载背景">
-        <i class="fa-regular fa-image"></i>
-    </a>
-</div>
 
-<style>
-.dl-img {
-    width: 48px;
-    height: 48px;
-    text-align: center;
-    border-radius: 50%;
-    position: fixed;
-    right: 15px;
-    bottom: 78px;
-    margin-bottom: 0;
-    z-index: 900;
-    display: flex;
-}
-
-.dl-img .btn-floating {
-    width: 48px;
-    height: 48px;
-}
-
-.dl-img i {
-    font-size: 1.8rem;
-    line-height: 48px !important;
-}
-</style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-    const downloadButton = document.querySelector('.btn-download');
-
-    downloadButton.addEventListener('click', function (event) {
-        event.preventDefault();
-        const blob = backgroundImage.toBlob();
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = '背景图片.jpg';
-        a.click();
-        URL.revokeObjectURL(url);
-    });
-});
-</script> -->
 
     <script src="https://fastly.jsdelivr.net/gh/maxstars247/maxstars247.github.io/libs/materialize/materialize.min.js"></script>
     <script src="https://fastly.jsdelivr.net/gh/maxstars247/maxstars247.github.io/libs/masonry/masonry.pkgd.min.js"></script>
