@@ -454,6 +454,31 @@
     
     
     <entry>
+      <title>typora笔记</title>
+      <link href="/2021/11/05/typora-ru-men/"/>
+      <url>/2021/11/05/typora-ru-men/</url>
+      
+        <content type="html"><![CDATA[<h2 id="typora基本操作"><a href="#typora基本操作" class="headerlink" title="typora基本操作"></a>typora基本操作</h2><h4 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h4><pre class="language-markdown" data-language="markdown"><code class="language-markdown">Ctrl+Home   返回Typora顶部Ctrl+End    返回Typora底部Ctrl+F  搜索Ctrl+H  搜索并替换</code></pre><h4 id="建立标题"><a href="#建立标题" class="headerlink" title="建立标题"></a>建立标题</h4><p><strong>快捷操作</strong>：</p><pre class="language-markdown" data-language="markdown"><code class="language-markdown">Ctrl+1  一级标题Ctrl+2  二级标题Ctrl+3  三级标题Ctrl+4  四级标题Ctrl+5  五级标题Ctrl+6  六级标题</code></pre><p><code>markdown</code>语法：</p><pre class="language-markdown" data-language="markdown"><code class="language-markdown">-- # 这是一级标题-- ## 这是二级标题-- ### 这是三级标题</code></pre><p><strong>示例</strong>：</p><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h4 id="字体加粗"><a href="#字体加粗" class="headerlink" title="字体加粗"></a>字体加粗</h4><p><strong>快捷键</strong>：<code>Ctrl+B</code></p><p><strong>markdown语法</strong>：<code>**加粗内容**</code></p><p>示例：<strong>我要加粗</strong></p><h4 id="字体倾斜"><a href="#字体倾斜" class="headerlink" title="字体倾斜"></a>字体倾斜</h4><p><strong>快捷键</strong>：<code>Ctrl+I</code></p><p><strong>markdown语法</strong>：<code>*倾斜内容*</code></p><p><strong>示例</strong>：<em>我要倾斜</em></p><h4 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h4><p><strong>快捷键</strong>：<code>Ctrl+U</code></p><p><strong>markdown语法</strong>：<code>&lt;u&gt;加粗内容&lt;/u&gt;</code></p><p><strong>示例</strong>：<u>我要下划线</u></p><h4 id="创建表格"><a href="#创建表格" class="headerlink" title="创建表格"></a>创建表格</h4><p><strong>快捷键</strong>：<code>Ctrl+T</code></p><p><strong>示例</strong>：</p><table><thead><tr><th>标题1</th><th>标题2</th><th>标题3</th></tr></thead><tbody><tr><td>内容1.1</td><td>内容2.1</td><td>内容3.1</td></tr><tr><td>内容1.2</td><td>内容2.2</td><td>内容3.2</td></tr></tbody></table><h4 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h4><p><strong>简介</strong>：超链接是一个跳转按钮，点击蓝色文字即可跳转</p><p><strong>markdown语法</strong>：<code>[]()</code></p><p><strong>示例</strong>：</p><p><a href="www.baidu.com">百度一下</a></p><h4 id="文字换行"><a href="#文字换行" class="headerlink" title="文字换行"></a>文字换行</h4><p><strong>操作</strong>：<code>shift+enter</code></p><p><strong>示例</strong>：</p><p>这是第一句话<br>现在是文字换行</p><h4 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h4><p><strong>markdown语法</strong>：<code>&gt;+空格</code>  </p><p><strong>示例</strong>：</p><blockquote><p>这是一个区块</p></blockquote><h4 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h4><p><strong>简介</strong>：插入图片可以直接将图片复制到typora，也可以按照以下内容手动创建</p><pre class="language-markdown" data-language="markdown"><code class="language-markdown">ctrl + shift + I</code></pre><p><img src="/2021/11/05/typora-ru-men/1.png" alt="这是一张图片"></p><p><strong>这里要特别注意相对路径的写法</strong>：</p><ol><li>首先打开<code>typora</code>设置图片优先使用<code>相对路径</code>：</li></ol><p><img src="/2021/11/05/typora-ru-men/2.png"></p><ol start="2"><li><p>然后再修改<code>hexo</code>配置</p><pre class="language-markdown" data-language="markdown"><code class="language-markdown">在_config.yml文件中，修改post_asset_folder: false为post_asset_folder: true</code></pre><p>这样做的目的是为了在<code>hexo new post 文章名字</code>的时候在你的<code>source-&gt;_posts</code>里生成一个和你文章名字相同的文件夹。你可以把相关的文件放进里面以便博客<code>下载</code>或者<code>查阅</code></p></li><li><p>在typora里写入文章相对路径（<strong>关键</strong>)：</p><p>使用快捷键<code>ctrl+shift+I</code>来创建一个<code>图片url</code>，如图</p><p><img src="/2021/11/05/typora-ru-men/3.png"></p><p>然后在<strong>（）</strong>里输入相对<code>图片路径</code></p><p>格式为：<code>./文章名字/文件名称</code></p><p>例如：<code>./hexo新手教程/1.png</code></p><p>相对路径的写法:<code>./</code></p><p>上级（父级）路径的写法：<code>../</code></p><p>上两级路径的写法：<code>../../</code></p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> typora教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo搭建全解</title>
       <link href="/2021/11/05/hexo-da-jian-quan-jie/"/>
       <url>/2021/11/05/hexo-da-jian-quan-jie/</url>
