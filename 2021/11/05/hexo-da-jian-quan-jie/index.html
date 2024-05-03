@@ -378,21 +378,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-04-25
+                    2024-05-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    7.1k
+                    8.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    27 分
+                    32 分
                 </div>
                 
 
@@ -418,14 +418,14 @@
 <p><strong>介绍</strong>：它可以让JavaScript成为与PHP、Python、Perl、Ruby等服务端语言平起平坐的脚本语言</p>
 <p><strong>安装</strong>：</p>
 <p>自行选择自己的电脑是32位还是64位，下载长期维护版，下载的是一个<code>.msi</code>的安装包</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220306103212818-17068572795521.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220306103212818-1714733558686-1.png"></p>
 <p>安装不用做任何多余的操作，只要选择好安装的路径(默认装在C盘)并点击下一步即可完成安装</p>
 <p><strong>检验</strong>：</p>
 <p>安装完成后在键盘按<code>win+R</code>进入运行并输入<code>cmd</code>进入<strong>命令提示符</strong>窗口，分别输入下列命令：</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">node</span> <span class="token parameter variable">-v</span> <span class="token comment">#显示安装的nodejs版本</span>
 <span class="token function">npm</span> <span class="token parameter variable">-v</span> <span class="token comment">#显示安装的npm版本</span></code></pre>
 
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220306103948513-17068572795532.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220306103948513-1714733558687-2.png"></p>
 <p>如果有版本回显，则安装成功</p>
 <p><strong>修改全局模块路径和缓存路径</strong>：(可选)</p>
 <p><strong>原因</strong>：当我们执行<code>npm install xxxx -g</code>时，会默认下载到c盘</p>
@@ -449,7 +449,7 @@
 <p><strong>如</strong>：<code>E:\develop\nodejs\node_global\node_modules</code></p>
 <p><strong>在用户用户变量中的Path变量</strong>：</p>
 <p>将默认的<code>npm路径</code>修改为新建的<code>node_global路径</code></p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220306110645149-17068572795533.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220306110645149-1714733558687-3.png"></p>
 <p>点击确定保存即可</p>
 <h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><p><strong>介绍</strong>：是一个开源的分布式版本控制系统，可以有效、高速地处理各种项目版本的管理</p>
 <p><strong>下载地址</strong>：<a target="_blank" rel="noopener" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
@@ -461,11 +461,11 @@
 <p><strong>网址</strong>：<a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a></p>
 <p>进入以后按照提示注册即可</p>
 <h3 id="将GitHub仓库和git关联"><a href="#将GitHub仓库和git关联" class="headerlink" title="将GitHub仓库和git关联"></a>将GitHub仓库和git关联</h3><p><strong>介绍</strong>：因为博客是一个网站，所以建立网站需要搭载一个服务器上，通俗点说，<code>GitHub</code>就是一个服务器，所以要利用<code>GitHub</code>存储我们网站的内容</p>
-<h4 id="添加仓库"><a href="#添加仓库" class="headerlink" title="添加仓库"></a>添加仓库</h4><p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307155943605-17068572795534.png"></p>
+<h4 id="添加仓库"><a href="#添加仓库" class="headerlink" title="添加仓库"></a>添加仓库</h4><p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307155943605-1714733558687-4.png"></p>
 <ol>
 <li>点击用户头像旁的<code>＋</code>号，选择<code>New repository</code></li>
 </ol>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307160122740-17068572795535.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307160122740-1714733558687-5.png"></p>
 <p>在<code>repository name</code>(仓库名)内填写：<code>(自己GitHub的注册名).github.io</code></p>
 <ol start="2">
 <li><p>选择add a README file</p>
@@ -476,7 +476,7 @@
 <h4 id="创建SSH-Key"><a href="#创建SSH-Key" class="headerlink" title="创建SSH Key"></a>创建SSH Key</h4><p>Git和github之间的通信是通过SSH加密的，因此需要执行下面的操作：</p>
 <p>在本地主目录查找是否有.ssh目录，如果有，打开该目录，一般会有这两个文件：<code>id_rsa</code>(私钥)和<code>id_rsa.pub</code>(公钥)</p>
 <p>如果没有，任意位置右键打开git bash here：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240125161415046-17068572795536.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240125161415046-1714733558687-6.png"></p>
 <p>输入如下命令生成ssh key：</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash">ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-C</span> <span class="token string">"youselfemail@email.com"</span> <span class="token comment">#(这里需要输入你的邮箱)</span>
 
@@ -490,12 +490,12 @@
 </code></pre>
 
 <p>生成密钥后，我们按照提示的路径找到生成的<code>id_rsa.pub</code>，用记事本或编辑器打开，复制里面的内容</p>
-<h4 id="GitHub添加ssh-key"><a href="#GitHub添加ssh-key" class="headerlink" title="GitHub添加ssh key"></a>GitHub添加ssh key</h4><p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307162519482-17068572795537.png"></p>
+<h4 id="GitHub添加ssh-key"><a href="#GitHub添加ssh-key" class="headerlink" title="GitHub添加ssh key"></a>GitHub添加ssh key</h4><p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307162519482-1714733558687-7.png"></p>
 <p>在GitHub上点击你的头像，点击<code>setting</code>(<strong>设置</strong>)</p>
 <p>找到<code>SSH and GPG keys</code></p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307162827047-17068572795538.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307162827047-1714733558687-8.png"></p>
 <p> 点击第一个<code>New SSH keys</code></p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307162934219-17068572795539.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307162934219-1714733558687-9.png"></p>
 <p><strong>title</strong>：你的钥匙名字(随便写)，可以写blog</p>
 <p><strong>key</strong>：填写你刚刚复制的内容</p>
 <p>填写完毕后点击<code>add SSH key</code>(添加)</p>
@@ -522,30 +522,76 @@
 <span class="token comment"># Hi xxxxx! You've successfully authenticated, but GitHub does not provide shell access.</span>
 <span class="token comment"># 这里提示你已经成功链接上github，但是github不提供shell连接，此时你的ssh_key已经部署成功</span></code></pre>
 
-<h3 id="在本地生成博客内容"><a href="#在本地生成博客内容" class="headerlink" title="在本地生成博客内容"></a>在本地生成博客内容</h3><p>在你的任意一个盘(除了c盘)新建一个文件夹用来存放博客，文件名最好填写英文</p>
+<h3 id="在本地生成博客"><a href="#在本地生成博客" class="headerlink" title="在本地生成博客"></a>在本地生成博客</h3><p><strong>简介</strong>：在本地生成博客时，需要使用hexo进行生成。使用hexo时，需要安装，生成，做好相应配置后才能上传到github</p>
+<h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><p>在你的任意一个盘(除了c盘)新建一个文件夹用来存放博客，文件名最好填写英文</p>
 <p>进入这个空的文件夹，在空白的地方右键，选择<code>git bash here</code>：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307164209077-170685727955310.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307164209077-1714733558687-10.png"></p>
 <p><strong>输入以下命令</strong>：</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-cli <span class="token parameter variable">-g</span> <span class="token comment">#npm安装hexo</span>
 hexo <span class="token parameter variable">-v</span> <span class="token comment">#查看hexo版本，如果报错，重新执行安装命令</span>
 hexo init <span class="token comment">#生成hexo环境，如果报错，重新执行该命令</span>
 hexo g <span class="token comment">#静态生成博客页面</span>
-hexo s <span class="token comment">#建立服务</span></code></pre>
+hexo s <span class="token comment">#建立服务</span>
+<span class="token comment"># 也可以写成</span>
+hexo g <span class="token operator">&amp;&amp;</span> hexo s</code></pre>
 
 <p>按照提示打开<a href="http://localhost:4000即可进入本地生成的博客">http://localhost:4000即可进入本地生成的博客</a></p>
 <p>在git按住<code>Ctrl + C</code>即可停止服务</p>
+<h5 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h5><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看全部命令</span>
+hexo <span class="token parameter variable">-h</span>
+
+
+<span class="token comment"># 安装</span>
+<span class="token function">npm</span> <span class="token function">install</span> hexo <span class="token parameter variable">-g</span>
+<span class="token comment"># 升级</span>
+<span class="token function">npm</span> update hexo <span class="token parameter variable">-g</span>
+<span class="token comment"># 查看hexo的版本</span>
+hexo version
+<span class="token comment"># 创建nodejs-hexo 名字的本地文件</span>
+hexo init nodejs-hexo
+<span class="token comment"># 创建博客</span>
+hexo init nodejs-hexo
+<span class="token comment"># 初始化，生成文件夹为blog</span>
+hexo init blog
+<span class="token comment"># 进入blog文件夹</span>
+<span class="token builtin class-name">cd</span> blog
+<span class="token comment"># 安装依赖库</span>
+<span class="token function">npm</span> <span class="token function">install</span>
+<span class="token comment">#生成一套静态网页</span>
+hexo generate
+<span class="token comment">#运行测试,浏览器打开地址，http://localhost:4000/</span>
+hexo server
+<span class="token comment">#进行部署</span>
+hexo deploy
+
+<span class="token comment">#新建文章‘new article’</span>
+hexo new <span class="token string">"new article"</span>
+<span class="token comment">#新建页面 ‘about’</span>
+hexo new page <span class="token string">"about"</span>
+
+<span class="token comment"># 新建文章</span>
+hexo n <span class="token string">"我的博客"</span> <span class="token operator">==</span> hexo new <span class="token string">"我的博客"</span>
+<span class="token comment"># 生成</span>
+hexo g <span class="token operator">==</span> hexo generate
+<span class="token comment"># 启动服务预览</span>
+hexo s <span class="token operator">==</span> hexo server
+<span class="token comment"># 部署</span>
+hexo d <span class="token operator">==</span> hexo deploy</code></pre>
+
+
+
 <h3 id="发布博客到GitHub"><a href="#发布博客到GitHub" class="headerlink" title="发布博客到GitHub"></a>发布博客到GitHub</h3><h4 id="创建令牌"><a href="#创建令牌" class="headerlink" title="创建令牌"></a>创建令牌</h4><p>点击用户头像里的<code>setting</code>，找到<code>Delveloper settings</code>，点击进入</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307175359967-170685727955311.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307175359967-1714733558687-11.png"></p>
 <p><strong>生成</strong>：找到<code>Personal access tokens</code>点击<code>Generate new token</code></p>
 <p><strong>勾选所有选项</strong>(这里也可以只勾选repo，设置令牌期限为无限期)</p>
 <p><strong>创建</strong>：写上名字并<code>generate token</code></p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307174814887-170685727955312.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307174814887-1714733558687-12.png"></p>
 <p>创建以后会生成令牌序列号，复制下来并保存</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307175301506-170685727955313.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307175301506-1714733558687-13.png"></p>
 <p>把你的令牌手动输入password框</p>
 <p>若上传成功，你的博客已经可以通过网址进行访问，输入<code>你的GitHub名.github.io</code>即可访问你的博客</p>
 <h4 id="修改config-yml"><a href="#修改config-yml" class="headerlink" title="修改config.yml"></a>修改config.yml</h4><p>找到博客目录<code>config.yml</code>文件，双击打开</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307165644744-170685727955314.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307165644744-1714733558687-14.png"></p>
 <p>修改deploy的内容为：</p>
 <pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
   <span class="token key atrule">type</span><span class="token punctuation">:</span> git
@@ -554,10 +600,10 @@ hexo s <span class="token comment">#建立服务</span></code></pre>
 
 <p><strong>branch说明</strong>：github创建的gitpage默认使用main分支，需要在仓库的gitpage相关设置更改分支为master分支，或者干脆直接上传到main分支里面。</p>
 <p><strong>可以在你的仓库里看到branch，你可以进入并修改它的名字</strong>：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307180908159-170685727955315.png"></p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307181045721-170685727955316.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307180908159-1714733558687-15.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307181045721-1714733558687-16.png"></p>
 <p><strong>repo这里填写你的仓库地址</strong>：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307170155490-170685727955317.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220307170155490-1714733558687-17.png"></p>
 <p>复制https里的内容</p>
 <p><strong>在git输入</strong>：</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git <span class="token parameter variable">--save</span> <span class="token comment">#安装hexo-deployer-git发布工具</span>
@@ -577,7 +623,7 @@ Run
   <span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"maxstars247"</span></code></pre>
 
 <p>输入完信息后会提示你输入链接github的方式：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240126123137370-170685727955318.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240126123137370-1714733558687-18.png"></p>
 <p>这里选择token输入你刚创建的令牌即可</p>
 <h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><h3 id="新建post-文章"><a href="#新建post-文章" class="headerlink" title="新建post(文章)"></a>新建post(文章)</h3><p>你的博客里现在只有一篇叫<code>hello world</code>的文章，现在，你可以使用git执行下列命令来新建一个属于自己的文章了：</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash">hexo new <span class="token operator">&lt;</span>文章名<span class="token operator">></span></code></pre>
@@ -652,12 +698,12 @@ Run
 <p><strong>中文配置手册</strong>：<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md</a></p>
 <p>下载该主题后也可以在文件里查看到该手册</p>
 <h5 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h5><p><strong>这里创建的分页对应这几个功能</strong>：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240128154200114-170685727955319.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240128154200114-1714733558687-19.png"></p>
 <p>你需要按照教程创建相应的分页界面，否则回返回错误页面，Cannot GET &#x2F;xxx：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240128153403319-170685727955320.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240128153403319-1714733558687-20.png"></p>
 <p>你需要在hexo根目录下创建该文件，而不是在themes文件夹内，在这个目录git bash here：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240128155159346-170685727955321.png"></p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240128155321678-170685727955322.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240128155159346-1714733558687-21.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240128155321678-1714733558687-22.png"></p>
 <p><strong>分类 categories</strong>：</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash">hexo new page <span class="token string">"categories"</span></code></pre>
 
@@ -781,46 +827,6 @@ layout: &quot;about&quot;
     <span class="token key atrule">url</span><span class="token punctuation">:</span> /friends
     <span class="token key atrule">icon</span><span class="token punctuation">:</span> fas fa<span class="token punctuation">-</span>address<span class="token punctuation">-</span>book</code></pre>
 
-<h5 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h5><p>首先，修改 Hexo 根目录下 <code>_config.yml</code> 文件中 <code>highlight.enable</code> 的值为 <code>false</code>，并将 <code>prismjs.enable</code> 的值设置为 <code>true</code>，主要配置如下：</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">highlight</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">auto_detect</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span>
-  <span class="token key atrule">wrap</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">hljs</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-<span class="token key atrule">prismjs</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">preprocess</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span></code></pre>
-
-<p>按照这个方法设置以后，我们发现这个玩意长这样：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240129023608248-170685727955323.png"></p>
-<p>显然，单独js文件根本不能满足渲染需要，我们尝试不更改配置安装<code>hexo-prism-plugin</code></p>
-<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i <span class="token parameter variable">-S</span> hexo-prism-plugin</code></pre>
-
-<p>在根目录的<code>config.yml</code>文件中添加配置：</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">prism_plugin</span><span class="token punctuation">:</span>
-  <span class="token key atrule">mode</span><span class="token punctuation">:</span> <span class="token string">'preprocess'</span>  <span class="token comment"># preprocess/realtime</span>
-  <span class="token key atrule">theme</span><span class="token punctuation">:</span> <span class="token string">'tomorrow'</span>
-  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment">#default false</span>
-  <span class="token key atrule">custom_css</span><span class="token punctuation">:</span> <span class="token comment">#</span></code></pre>
-
-<p>我们发现渲染出现了混乱，并且在渲染框中出现了hightlight字样：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240129023931343-170685727955325.png"></p>
-<p>但是搜索不到相同的案例。于是我猜想是<code>highlight</code>文件还在起作用导致渲染出现错误。在根目录的config.yml中，我发现了与<code>highlight</code>渲染有关的选项：</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">syntax_highlighter</span><span class="token punctuation">:</span> highlight.js
-<span class="token key atrule">highlight</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">auto_detect</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span>
-  <span class="token key atrule">wrap</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">hljs</span><span class="token punctuation">:</span> <span class="token boolean important">false</span></code></pre>
-
-<p>尝试直接删除这个<code>highlight.js</code>文件让<code>syntax_highlighter</code>(语法高亮显示)指向空文件，重新渲染页面，终于得到了正常的代码高亮：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240129024622558-170685727955324.png" alt="image-20240129024622558"></p>
 <h5 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h5><p>本主题中还使用到了 <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search">hexo-generator-search</a> 的 Hexo 插件来做内容搜索，安装命令如下：</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-search <span class="token parameter variable">--save</span></code></pre>
 
@@ -854,7 +860,7 @@ layout: &quot;about&quot;
 
 <h5 id="banner图设置"><a href="#banner图设置" class="headerlink" title="banner图设置"></a>banner图设置</h5><p><strong>banner图每日切换</strong>：</p>
 <p>banner图就是封面图，不想要封面图的也可以设置不开启，我这里默认开启</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240128171639608-170685727955326.png" alt="image-20240128171639608"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240128171639608-1714733558687-23.png" alt="image-20240128171639608"></p>
 <p>找到matery的<code>config.tml</code>，修改成以下文件：</p>
 <pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># banner 是否每日切换.</span>
 <span class="token comment"># 若为 false, 则 banner 默认为 /medias/banner/0.jpg</span>
@@ -1020,8 +1026,85 @@ layout: &quot;about&quot;
 <span class="token punctuation">---</span></span>
 </code></pre>
 
+<h4 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h4><p><strong>简介</strong>：<code>hexo</code>高亮代码有很多种方式，目前流行的有<code>hexo-prism-plugin</code>和<code>prismjs</code></p>
+<h5 id="hexo-prism-plugin"><a href="#hexo-prism-plugin" class="headerlink" title="hexo-prism-plugin"></a>hexo-prism-plugin</h5><p><strong>简介</strong>：<code>hexo-prism-plugin</code>是<code>hexo</code>的一款插件，主要作用是美化和高亮代码</p>
+<p><strong>注意</strong>：<code>hexo-prism-plugin</code>无法渲染<code>&#123;&#123; &#125;&#125;</code>，需要更改成<code>prismjs</code>：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240418232952040.png"></p>
+<p><strong>首先安装插件</strong>：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i <span class="token parameter variable">-S</span> hexo-prism-plugin</code></pre>
 
+<p><strong>在根目录的config.yml文件中修改配置</strong>：</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># 将下列配置修改</span>
+<span class="token key atrule">syntax_highlighter</span><span class="token punctuation">:</span> 
+<span class="token key atrule">highlight</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">auto_detect</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span>
+  <span class="token key atrule">wrap</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">hljs</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
 
+<span class="token comment"># 在文件末尾添加如下配置</span>
+<span class="token key atrule">prism_plugin</span><span class="token punctuation">:</span>
+  <span class="token key atrule">mode</span><span class="token punctuation">:</span> <span class="token string">'preprocess'</span>  <span class="token comment"># preprocess/realtime</span>
+  <span class="token key atrule">theme</span><span class="token punctuation">:</span> <span class="token string">'tomorrow'</span>
+  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment">#default false</span>
+  <span class="token key atrule">custom_css</span><span class="token punctuation">:</span> <span class="token comment">#</span></code></pre>
+
+<p><strong>注意</strong>：不删除<code>highlight.js</code>会出现渲染混乱，并且在渲染框中出现了<code>hightlight</code>字样：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">syntax_highlighter: highlight.js</code></pre>
+
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240129023931343-1714733558687-24.png"></p>
+<p>尝试直接删除这个<code>highlight.js</code>文件让<code>syntax_highlighter</code>(语法高亮显示)指向空文件，重新渲染页面，终于得到了正常的代码高亮：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240129024622558-1714733558687-25.png" alt="image-20240129024622558"></p>
+<h5 id="prismjs"><a href="#prismjs" class="headerlink" title="prismjs"></a>prismjs</h5><p><strong>简介</strong>：<code>prismjs</code>是一个代码高亮的通用样式，<code>hexo</code>通过调用这个样式实现高亮。</p>
+<p><strong>官方下载链接</strong>：<a target="_blank" rel="noopener" href="https://prismjs.com/index.html">https://prismjs.com/index.html</a></p>
+<p>如果你之前安装了<code>hexo-prism-plugin</code>，你需要卸载该插件：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> un hexo-prism-plugin <span class="token parameter variable">--save</span></code></pre>
+
+<p>卸载完成后，修改<code>Hexo</code>根目录下 <code>_config.yml</code> 文件中 <code>highlight.enable</code> 的值为 <code>false</code>，并将 <code>prismjs.enable</code> 的值设置为 <code>true</code>，主要配置如下：</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">highlight</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">auto_detect</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span>
+  <span class="token key atrule">wrap</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">hljs</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">prismjs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">preprocess</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span></code></pre>
+
+<p><strong>设置完成以后，代码应该可以正常高亮显示了</strong>：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240419134257577.png"></p>
+<p><strong>css没生效时</strong>：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240129023608248-1714733558687-26.png"></p>
+<p>prism的js主要是显示行号，显示特殊字符等功能，如果你没有这个需求可以不添加。metery主题的prism是没有js代码的，如果你要显示行号，你需要去官网下载：</p>
+<p><strong>这里Language选择select all</strong>：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240419134717854.png"></p>
+<p><strong>插件选择Line Number</strong>：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240419134828055.png"></p>
+<p><strong>选择完成后点击下载JS和CSS</strong>：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240419134856965.png"></p>
+<p>进入<code>博客根目录/themes/&#123;主题文件夹&#125;/source/libs/prism/</code>，删除原样式文件，将下载好的<code>prism.js</code>和<code>prism.css</code>重命名为<code>prism.min.js</code>和<code>prism.min.css</code>：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240419135156814.png"></p>
+<p>最后检查你的<code>metery</code>主题文件的<code>config.yml</code>中，<code>libs</code>的文件路径是否和文件夹的名称对应：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240419140134357.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240419140212995.png"></p>
+<h4 id="添加按钮"><a href="#添加按钮" class="headerlink" title="添加按钮"></a>添加按钮</h4><p><strong>简介</strong>：有的朋友想要博客的背景图片，因为我图片是动态切换的，没问题，直接给整上</p>
+<h3 id="使用Vercel部署博客-推荐"><a href="#使用Vercel部署博客-推荐" class="headerlink" title="使用Vercel部署博客(推荐)"></a>使用Vercel部署博客(推荐)</h3><p><strong>简介</strong>：Vercel可以代替CDN起到资源缓存的作用，鉴于很多免费的CDN被减速或封禁，这个方法是目前最好的选择</p>
+<p>首先使用你的github账号注册vercel，注册完成后点击overview，然后<code>Import Project</code>：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240130014305525-1714733558687-27.png"></p>
+<p>选择你的博客仓库进行部署：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240130014402826-1714733558687-28.png"></p>
+<p>选择<code>Framework Preset</code>为<code>other</code>，别的保持不变，点击<code>deploy</code>进行部署：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240130015409925-1714733558687-29.png" alt="image-20240130015409925"></p>
+<p>部署完成后，我们直接添加域名：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240130015555284-1714733558687-30.png"></p>
+<p>按照提示添加域名即可</p>
+<p>测试了一下，访问速度还是不错的：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240130020836765-1714733558687-31.png"></p>
 <h3 id="套用CDN-DNS解析加速"><a href="#套用CDN-DNS解析加速" class="headerlink" title="套用CDN(DNS解析加速)"></a>套用CDN(DNS解析加速)</h3><p><strong>介绍</strong>：<code>CDN(Content Delivery Network)</code>是指内容分发网络，也称为内容传送网络，为了能在传统<code>IP</code>网上发布丰富的宽带媒体内容，他们提出在现有互联网基础上建立一个内容分发平台专门为网站提供服务</p>
 <p><strong>作用</strong>：降低访客打开你博客的延迟，同时提高博客的安全性</p>
 <p><strong>需要的资源</strong>：一个域名和一个CDN运营商(这两个服务需要提前购买好)</p>
@@ -1040,61 +1123,138 @@ layout: &quot;about&quot;
 <h4 id="套用CloudFlare-太慢了，不推荐"><a href="#套用CloudFlare-太慢了，不推荐" class="headerlink" title="套用CloudFlare(太慢了，不推荐)"></a>套用CloudFlare(太慢了，不推荐)</h4><p><strong>官网</strong>：<a target="_blank" rel="noopener" href="https://www.cloudflare.com/zh-cn/">https://www.cloudflare.com/zh-cn/</a></p>
 <p>现在你可以进入CloudFlare官网注册你的第一个账号，选择套餐为Free套餐即可</p>
 <h5 id="添加你的站点"><a href="#添加你的站点" class="headerlink" title="添加你的站点"></a>添加你的站点</h5><p><strong>在主页选择添加站点</strong>：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316150255814-170685727955327.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316150255814-1714733558687-32.png"></p>
 <p><strong>输入你购买到的域名，点击添加站点即可</strong>：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316150545054-170685727955328.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316150545054-1714733558687-33.png"></p>
 <h5 id="将你的域名DNS解析指向CloudFlare"><a href="#将你的域名DNS解析指向CloudFlare" class="headerlink" title="将你的域名DNS解析指向CloudFlare"></a>将你的域名DNS解析指向CloudFlare</h5><p>添加域名后它会告诉你你的域名DNS解析没有指向Cloudflare，这时，你只需要按照提示设置域名的DNS指向</p>
 <h5 id="设置你的CkoudFlare安全等级"><a href="#设置你的CkoudFlare安全等级" class="headerlink" title="设置你的CkoudFlare安全等级"></a>设置你的CkoudFlare安全等级</h5><p>完成以上设置后，回到主页查看你的域名，当它显示为有效时，证明你的设置已经成功</p>
 <p><strong>我们需要点击域名，进入安全设置</strong>：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316150949139-170685727955429.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316150949139-1714733558687-34.png"></p>
 <p>选择<strong>SSL&#x2F;TLS</strong>：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316151213150-170685727955430.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316151213150-1714733558687-35.png"></p>
 <p><strong>这里选择完全</strong>：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316151610397-170685727955431.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316151610397-1714733558687-36.png"></p>
 <h5 id="创建你的域名"><a href="#创建你的域名" class="headerlink" title="创建你的域名"></a>创建你的域名</h5><p>选择设置<strong>DNS</strong>：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316152543473-170685727955432.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316152543473-1714733558687-37.png"></p>
 <p>创建一条<strong>CNAME</strong>记录：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316152742629-170685727955433.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316152742629-1714733558687-39.png"></p>
 <p>点击添加记录</p>
 <p><strong>在名称输入</strong>：www</p>
 <p><strong>在目标输入你仓库的地址</strong>：(github名称)+github.io</p>
 <p>点击关闭代理并保存</p>
 <h5 id="设置GitHub域名指向"><a href="#设置GitHub域名指向" class="headerlink" title="设置GitHub域名指向"></a>设置GitHub域名指向</h5><p>返回你的项目，点击<strong>setting</strong>：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316152157985-170685727955434.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316152157985-1714733558687-38.png"></p>
 <p>点击<strong>Pages</strong>，在<strong>Custom domain</strong>里输入你的域名：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316152330963-170685727955435.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316152330963-1714733558687-40.png"></p>
 <p>当GitHub检测到是能用的以后，我们点击<strong>Save</strong>，点击<strong>Enforce HTTPS</strong></p>
 <p><strong>返回Cloudflare打开代理状态并保存</strong>：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316153259257-170685727955436.png" alt="image-20220316153259257"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316153259257-1714733558687-41.png" alt="image-20220316153259257"></p>
 <p><strong>在浏览器输入你的域名看是否可以显示博客</strong>：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316153428040-170685727955437.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20220316153428040-1714733558687-42.png"></p>
 <p><strong>注意</strong>：</p>
 <p>若无法使用HTTPS协议访问，说明证书还没下发，这时你只需要双手离开键盘，喝杯水，玩玩游戏，等待证书下发即可</p>
 <p>如果无法正常显示你的博客，说明你的地址绑定出现了问题，自行查看是哪里的域名写错了</p>
-<h3 id="使用Vercel部署博客-推荐"><a href="#使用Vercel部署博客-推荐" class="headerlink" title="使用Vercel部署博客(推荐)"></a>使用Vercel部署博客(推荐)</h3><p><strong>简介</strong>：Vercel可以代替CDN起到资源缓存的作用，鉴于很多免费的CDN被减速或封禁，这个方法是目前最好的选择</p>
-<p>首先使用你的github账号注册vercel，注册完成后点击overview，然后<code>Import Project</code>：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240130014305525-170685727955438.png"></p>
-<p>选择你的博客仓库进行部署：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240130014402826-170685727955439.png"></p>
-<p>选择<code>Framework Preset</code>为<code>other</code>，别的保持不变，点击<code>deploy</code>进行部署：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240130015409925-170685727955440.png" alt="image-20240130015409925"></p>
-<p>部署完成后，我们直接添加域名：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240130015555284-170685727955441.png"></p>
-<p>按照提示添加域名即可</p>
-<p>测试了一下，访问速度还是不错的：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240130020836765-170685727955442.png"></p>
+<h4 id="套用CloudFront"><a href="#套用CloudFront" class="headerlink" title="套用CloudFront"></a>套用CloudFront</h4><p><strong>简介</strong>：<code>CloudFront</code>是亚马逊推出的<code>CDN</code>服务，但是没有<code>CloudFlare</code>的安全保护，而且没有傻瓜式的一键设置功能，同时<code>CloudFront</code>不免费，但是给博客做加速，费用不会太高（没有受到攻击的情况下）。</p>
+<p><strong>参考链接</strong>：<a target="_blank" rel="noopener" href="https://aws.amazon.com/cn/blogs/china/configure-amazon-cloudfront-to-accelerate-the-whole-site">https://aws.amazon.com/cn/blogs/china/configure-amazon-cloudfront-to-accelerate-the-whole-site</a></p>
+<h5 id="项目架构"><a href="#项目架构" class="headerlink" title="项目架构"></a>项目架构</h5><p><strong>简介</strong>：这是整个项目的架构图。这里需要用到两个域名，一个用于<code>vercel</code>，一个用于<code>cloudflare</code>重命名。当然你也可以使用<code>vercel</code>原分配的域名，这样你就节省了一个域名的使用。</p>
+<p>我这里的建议是，使用<code>vercel</code>分配的域名进行加速，使用另外一个域名做备用访问接口，因此，你可能需要两个域名来完成这个项目：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240503173616456.png"></p>
+<p>为了完成域名的配置，建议将你的域名商权限分配给<code>cloudflare</code>，这里使用<code>cloudflare</code>做域名配置</p>
+<h5 id="新建Cloudfront分配"><a href="#新建Cloudfront分配" class="headerlink" title="新建Cloudfront分配"></a>新建Cloudfront分配</h5><p>首先进入亚马逊云搜索cloudfront：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240503164648608.png"></p>
+<p>点击进入<code>cloudfront</code>选择创建分配：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240503164820990.png"></p>
+<h5 id="设置分配"><a href="#设置分配" class="headerlink" title="设置分配"></a>设置分配</h5><p>将vercel分配给博客的域名填入Origin domain（源域），设置协议为匹配查看器：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240503175348448.png"></p>
+<p><strong>下面这里的自动压缩对象选择为Yes</strong>：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240503182306177.png"></p>
+<p><strong>缓存策略和源请求策略选择如下</strong>：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240503182523870.png"></p>
+<p>全部设置项的解释如下，也可以查看参考链接获得更详细的介绍：</p>
+<table>
+<thead>
+<tr>
+<th>托管 源请求策略</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>UserAgentRefererHeaders</code></td>
+<td>仅包含User-Agent和Referer标头，可以统计客户来源。</td>
+</tr>
+<tr>
+<td><code>CORS-CustomOrigin</code></td>
+<td>包含Origin标头，适用于自定义源启用跨源资源共享 CORS。</td>
+</tr>
+<tr>
+<td><code>CORS-S3Origin</code></td>
+<td>适用于S3源启用跨源资源共享 CORS。</td>
+</tr>
+<tr>
+<td><code>AllViewer</code></td>
+<td>适用于动态请求的源站，源站可以获取查询字符串和Cookie等信息。</td>
+</tr>
+<tr>
+<td><code>Elemental-MediaTailor-PersonalizedManifests</code></td>
+<td>适用于Amazon Elemental MediaTailor 终端节点的源</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>托管 响应标头策略</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>SimpleCORS</code></td>
+<td>允许来自任何源的简单 CORS 请求（添加标头：Access-Control-Allow-Origin: *）。</td>
+</tr>
+<tr>
+<td><code>CORS-With-Preflight</code></td>
+<td>支持CORS的预检请求（Http的OPTIONS方法）。</td>
+</tr>
+<tr>
+<td><code>SecurityHeadersPolicy</code></td>
+<td>添加一组安全标头。</td>
+</tr>
+<tr>
+<td><code>CORS-and-SecurityHeadersPolicy</code></td>
+<td>添加CORS标头和安全标头。</td>
+</tr>
+<tr>
+<td><code>CORS-with-preflight-and-SecurityHeadersPolicy</code></td>
+<td>添加CORS，预检和安全标头。</td>
+</tr>
+</tbody></table>
+<p><strong>设置关闭WAF</strong>：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240503183003542.png"></p>
+<p>选择使用所有边缘站点，开启HTTP&#x2F;3：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240503183106303.png"></p>
+<p>申请一个证书：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240503183354481.png"></p>
+<p>选择请求公有证书：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240503183451122.png"></p>
+<p>这里填写<code>*.你的域名</code>，例如<code>*.maxstars.xyz</code>。然后选择DNS验证。填写完毕后点击请求：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240503183723118.png"></p>
+<p><strong>在你的域名下添加一个CNAME认证即可</strong>：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240503183920304.png"></p>
+<p>添加完成后返回<code>cloudfront</code>配置，添加一个给读者访问的域名，添加完成后创建分配，等待分配完成即可访问：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240503184646066.png"></p>
+<p>等待域名生效后用<code>nslookup</code>查看域名是否已经加速，若查找到<code>xxx.cloudfront.net</code>则已经成功：</p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240503185044469.png"></p>
 <h3 id="将博客设置被收录"><a href="#将博客设置被收录" class="headerlink" title="将博客设置被收录"></a>将博客设置被收录</h3><h4 id="设置必应收录"><a href="#设置必应收录" class="headerlink" title="设置必应收录"></a>设置必应收录</h4><p><strong>简介</strong>：这里我使用matery主题来演示。</p>
 <p><strong>必应收录链接</strong>：<a target="_blank" rel="noopener" href="https://search.google.com/search-console/welcome?hl=zh-CN">https://search.google.com/search-console/welcome?hl=zh-CN</a></p>
 <p>这里我们选择添加HTML标签：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240202145135994.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240202145135994-1714733558688-43.png"></p>
 <p>复这串HTML标签，来到<code>hexo-theme-matery/layout/_partial/head.ejs</code>中添加HTML标签：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240202103518874.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240202103518874-1714733558688-44.png"></p>
 <p>将标签添加到此处即可，使用这条命令重新部署博客：</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash">hexo cl <span class="token operator">&amp;&amp;</span> hexo g <span class="token operator">&amp;&amp;</span> hexo d</code></pre>
 
 <p>等待1分钟后，点击验证即可完成验证。</p>
 <p>完成后直接可以在后台拿到API：</p>
-<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240202143606362.png"></p>
+<p><img src="/2021/11/05/hexo-da-jian-quan-jie/image-20240202143606362-1714733558688-45.png"></p>
 <p>这里先复制API，保留备用。</p>
 <h4 id="增加收录速度"><a href="#增加收录速度" class="headerlink" title="增加收录速度"></a>增加收录速度</h4><p><strong>简介</strong>：使用<code>hexo-submit-urls-to-search-engine</code>可以增加各个平台搜索引擎的网页收录速度。</p>
 <p><strong>插件地址</strong>：<a target="_blank" rel="noopener" href="https://github.com/cjh0613/hexo-submit-urls-to-search-engine?tab=readme-ov-file">https://github.com/cjh0613/hexo-submit-urls-to-search-engine?tab=readme-ov-file</a></p>
