@@ -1,0 +1,1179 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="使用SDR接收NOAA气象卫星, 次元客栈">
+    <meta name="description" content="接收NOAA气象卫星NOAA极地气象卫星是什么简介：NOAA是太阳同步极轨卫星，采用双星运行，同一地区每天可有四次过境机会。第五代（NOAA-15—19）传感器采用改进型甚高分辨率辐射仪（AVHRR&amp;#x2F;3），和先进TIROS业务垂直">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="google-site-verification" content="uCs0vGZTs7OHwPQaDOhOOogilUILupgga56L79DNWDs" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>使用SDR接收NOAA气象卫星 | 次元客栈</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">次元客栈</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">次元客栈</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/noaa-15.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">使用SDR接收NOAA气象卫星</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                <span class="chip bg-color">教程</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E4%B8%9A%E4%BD%99%E6%97%A0%E7%BA%BF%E7%94%B5/" class="post-category">
+                                业余无线电
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-01-01
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2025-01-01
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    8 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="接收NOAA气象卫星"><a href="#接收NOAA气象卫星" class="headerlink" title="接收NOAA气象卫星"></a>接收NOAA气象卫星</h2><h3 id="NOAA极地气象卫星是什么"><a href="#NOAA极地气象卫星是什么" class="headerlink" title="NOAA极地气象卫星是什么"></a>NOAA极地气象卫星是什么</h3><p><strong>简介</strong>：NOAA是太阳同步极轨卫星，采用双星运行，同一地区每天可有四次过境机会。第五代（NOAA-15—19）传感器采用改进型甚高分辨率辐射仪（AVHRR&#x2F;3），和先进TIROS业务垂直探测器（ATOVS），包括高分辨率红外辐射探测仪（HIRS-3）、先进的微波探测装置A型（AMSU-A）和先进的微波探测装置B型（AMSU-B）。其中AVHRR&#x2F;3传感器包括5个波段，可见光红色波段、近红外波段、中红外波段和两个热红外波段。</p>
+<p><strong>关于NOAA_15详细信息可以在下面的网址查看</strong>：</p>
+<p><a target="_blank" rel="noopener" href="https://space.oscar.wmo.int/satellites/view/noaa_15">https://space.oscar.wmo.int/satellites/view/noaa_15</a></p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240210003049136.png"></p>
+<h4 id="接收介绍"><a href="#接收介绍" class="headerlink" title="接收介绍"></a>接收介绍</h4><p><strong>简介</strong>：现正常工作的NOAA卫星还有NOAA15，18，19。APT模式是NOAA上一种十分好接收的模式，你甚至可以使用拉杆天线或手台的鞭型天线接收该模式的信号，当然你最好还是使用UV段八木天线或者有效增益(判断标准是只能听到APT的模拟声而没有其他噪音)的天线进行接收，这样你才能接收到一副有效的图像。</p>
+<p>本教程提供两套方案，一种是用手台录制音频，到电脑解码。另一种是电脑虚拟声卡直出音频</p>
+<h5 id="天线架设"><a href="#天线架设" class="headerlink" title="天线架设"></a>天线架设</h5><p><strong>简介</strong>：这里强烈推荐八木天线。八木天线具有很强的指向性，如果配合云台或手动指向卫星，会获得很高的增益，你甚至能在八木天线装错的情况下用错误安装的八木天线接收到可用的APT图像，这也是我收到的第一幅APT图像，并且天线是装反的状态：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/03051432.jpg"></p>
+<p>八木天线超高的增益性甚至能够在仰角较好的情况下接收<code>meteor mn2-3</code>LRPT图像，即使<code>meteor mn2-3</code>的天线没有正确展开。</p>
+<p><strong>当然你也可以使用别的天线来接收</strong>，如：四壁螺旋天线、羊角天线(正V天线)等进行接收。</p>
+<p><strong>注意</strong>：为了防止在安装八木天线时装反振子，你需要格外注意振子的安装方向，<strong>参考安装教程</strong>或<strong>仔细阅读说明书</strong>可以很好的避免在第一次使用这种天线时安装出错，正确安装天线也是您安全接收信号的前提。</p>
+<h5 id="软件使用"><a href="#软件使用" class="headerlink" title="软件使用"></a>软件使用</h5><p><strong>接收工具</strong>：sdrsharp</p>
+<p><strong>解码工具</strong>：WXtoImg</p>
+<p><strong>定位工具</strong>：obitron</p>
+<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><p><strong>简介</strong>：为了接收NOAA系列卫星，你需要配置好上述软件</p>
+<h4 id="obitron"><a href="#obitron" class="headerlink" title="obitron"></a>obitron</h4><p><strong>简介</strong>：obitron是一款卫星定位软件，它有多普勒频移功能，可以抵消卫星高速接近和离开时，频率偏移的影响。</p>
+<p><strong>参考教程</strong>：<a target="_blank" rel="noopener" href="https://blog.csdn.net/hpu1011/article/details/6786207">https://blog.csdn.net/hpu1011/article/details/6786207</a></p>
+<p><strong>下载链接</strong>：<a target="_blank" rel="noopener" href="https://www.stoff.pl/downloads.php">https://www.stoff.pl/downloads.php</a></p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721145444063.png"></p>
+<h5 id="下载obitron"><a href="#下载obitron" class="headerlink" title="下载obitron"></a>下载obitron</h5><p><strong>简介</strong>：直接点击下载链接下载，<code>.exe</code>的为安装版，<code>.zip</code>为绿色版，两个版本没啥区别：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721145919654.png"></p>
+<h5 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h5><p>下载完成后，设置language为中文：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721150032160.png"></p>
+<p>选择<code>Miscellaneous</code>里的<code>Language</code>，设置为<code>Chinese simplified</code>，点击<code>apply</code>：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721150313365.png"></p>
+<h5 id="设置坐标"><a href="#设置坐标" class="headerlink" title="设置坐标"></a>设置坐标</h5><p><strong>简介</strong>：为了精确定位，你需要自行设置经纬度。输入地名，经纬度，注意格式，输入完成后选择加到地名表</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721150831087.png"></p>
+<p>选择你新加的地名，即可完成定位。</p>
+<h5 id="安装MyDDE驱动"><a href="#安装MyDDE驱动" class="headerlink" title="安装MyDDE驱动"></a>安装MyDDE驱动</h5><p><strong>简介</strong>：还是刚才的下载地址，选择<code>MyDDE Client</code>：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721152436569.png"></p>
+<p>解压后直接放到obitron的文件夹下：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721152722317.png"></p>
+<p>解压后来到旋转器电台这里，设置驱动程序为MyDDE，设置后点击旁边的按钮：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721152929591.png"></p>
+<p>弹出警告，点击确认：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721153040881.png"></p>
+<p>来到刚obitron下的MyDDE文件夹，选择<code>MyDDE.exe</code>：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721153245854.png"></p>
+<p>此时，MyDDE的驱动就设置完成了，选择任意一颗卫星看是否有数据显示，显示数据说明配置成功：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721153353324.png"></p>
+<h4 id="WXtoImg"><a href="#WXtoImg" class="headerlink" title="WXtoImg"></a>WXtoImg</h4><p><strong>简介</strong>：WXtoImg是NOAA专用解码工具，主要的作用就是解码APT信号。这个软件可以实时解码信号，也可以解码录音信号。</p>
+<p><strong>参考链接</strong>：<a target="_blank" rel="noopener" href="https://www.hellocq.net/forum/read.php?tid=181294">NOAA卫星云图的接收</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.rtl-sdr.com/rtl-sdr-tutorial-receiving-noaa-weather-satellite-images/">RTL-SDR TUTORIAL: RECEIVING NOAA WEATHER SATELLITE IMAGES</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/22f72511a783">NOAA气象云图解析软件WXtoImg 模式解析含义</a></p>
+<p><a target="_blank" rel="noopener" href="http://jingweidu.757dy.com/">经纬度查询定位</a></p>
+<p><strong>下载链接</strong>：<a target="_blank" rel="noopener" href="https://web.archive.org/web/20171209052450/http://www.WXtoImg.com:80/downloads/">https://web.archive.org/web/20171209052450/http://www.WXtoImg.com:80/downloads/</a></p>
+<h5 id="下载WXtoImg"><a href="#下载WXtoImg" class="headerlink" title="下载WXtoImg"></a>下载WXtoImg</h5><p><strong>简介</strong>：点击上述链接下载WXtoImg，下载完成后打开，你应该看到以下界面：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20231021221343088.png"></p>
+<p><strong>注意</strong>：这里下载不建议去下载另一个网站的，直接用waybackmachine的下载页回去原作者发布页下载即可。原作者把WXtoImg的网站关闭了，现在搜索引擎只能搜索到一个三方的备份站，那个网站下载的WXtoImg不能正常安装</p>
+<h5 id="激活WXtoImg"><a href="#激活WXtoImg" class="headerlink" title="激活WXtoImg"></a>激活WXtoImg</h5><p><strong>简介</strong>：下载完成后，需要激活WXtoImg以使用所有功能。在帮助中选择输入升级密钥：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20241009211200929.png"></p>
+<p><strong>使用下面的密钥</strong>：</p>
+<p><strong>2018 专业版升级密钥</strong></p>
+<p>全名： Kevin Schuchmann<br>电子邮件地址： 输入您的电子邮件地址<br>升级密钥： CGHZ-PP9G-EAJZ-AWKK-NDNX</p>
+<h5 id="使用wxtoproxy修复同步"><a href="#使用wxtoproxy修复同步" class="headerlink" title="使用wxtoproxy修复同步"></a>使用wxtoproxy修复同步</h5><p><strong>简介</strong>：由于WXtoImg原作者停止更新，用于获取开普勒数据的网址变更导致WXtoImg无法正常更新。为了修复WXtoImg的数据获取，可以使用<a target="_blank" rel="noopener" href="https://github.com/provector/wxtoproxy/">wxtoproxy</a>来更新数据。</p>
+<p><strong>参考教程</strong>：</p>
+<p><a target="_blank" rel="noopener" href="https://wxtoimgrestored.xyz/other-software/">Fix For Errors Downloading TLE &#x2F; Keplers</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1jG411P7Jz">修复WXtoimg无法更新星历的问题</a></p>
+<p><strong>下载wxtoproxy</strong>：<a target="_blank" rel="noopener" href="https://github.com/provector/wxtoproxy/releases">https://github.com/provector/wxtoproxy/releases</a></p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721232959671.png"></p>
+<p>下载完成后，将它复制到WXtoImg文件夹下，双击运行：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721233107342.png"></p>
+<p>运行看到软件自动打开了WXtoImg，就代表代理安装完成</p>
+<h5 id="设置WXtoImg代理"><a href="#设置WXtoImg代理" class="headerlink" title="设置WXtoImg代理"></a>设置WXtoImg代理</h5><p>简介：代理设置完成后，还要设置WXtoImg的代理指向地址。选择<code>Options</code>里的<code>Internet Options</code>，选择</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721233426626.png"></p>
+<p>勾选use proxy server，点击OK：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721233644444.png"></p>
+<p>这样代理就设置完成了</p>
+<h5 id="更新Keplers"><a href="#更新Keplers" class="headerlink" title="更新Keplers"></a>更新Keplers</h5><p><strong>简介</strong>：设置好代理后，就可以更新keplers了。但是每次更新keplers都需要打开wxtoproxy</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721233756048.png"></p>
+<p>看到左下角显示Done，新的开普勒数据加载后即可：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721234011501.png"></p>
+<h5 id="设置坐标-1"><a href="#设置坐标-1" class="headerlink" title="设置坐标"></a>设置坐标</h5><p><strong>简介</strong>：为了在卫星过境时开启接收，<code>WXtoImg</code>也需要设置坐标。这里选择<code>ground station location</code>：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721234518147.png"></p>
+<p>选择你的城市或输入坐标：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721234641027.png"></p>
+<p>可以在下面输入坐标，也可以在上面写city和country信息后点击lookup后自动定位</p>
+<h5 id="设置上层元素"><a href="#设置上层元素" class="headerlink" title="设置上层元素"></a>设置上层元素</h5><p><strong>简介</strong>：WXtoImg接收的图像只是一个卫星图像，它没有经纬网，也没有国境线，没有河流线。因此，我们需要设置这些元素来显示在地图上</p>
+<p>选择options里的map overlay options：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721235217085.png"></p>
+<p>设置显示的元素，我这里设置全部显示了。具体选项是什么意思自己查询即可：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721235551055.png"></p>
+<h5 id="设置自动接收"><a href="#设置自动接收" class="headerlink" title="设置自动接收"></a>设置自动接收</h5><p><strong>简介</strong>：选择file里的record：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721234936040.png"></p>
+<p>打开create images，其他参数请看RTL-SDR的参考链接：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721235116562.png"></p>
+<p>点击Accept后选择Auto Record，此时，你的左下角会显示下一次的接收时间。请严格按照此时间来打开所有软件，否则将会接收失败：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20240721235810895.png"></p>
+<p>这里的时间是UTC时间</p>
+<h4 id="SDR-配置"><a href="#SDR-配置" class="headerlink" title="SDR#配置"></a>SDR#配置</h4><p><strong>简介</strong>：安装SDR#的过程很简单，具体可以去看我的<a href="https://blog.maxstars.xyz/2023/11/01/sdr-bi-ji/">SDR#笔记</a>这里我就不再重复写了。这里着重讲一下SDR#的DDE插件安装</p>
+<h5 id="安装DDE插件"><a href="#安装DDE插件" class="headerlink" title="安装DDE插件"></a>安装DDE插件</h5><p><strong>下载DDEtracker</strong>：<a target="_blank" rel="noopener" href="https://satsignal.eu/software/DDETracker.html">https://satsignal.eu/software/DDETracker.html</a></p>
+<p><strong>简介</strong>：打开下载链接，选择<code>DDETrackerV8Binaries.zip</code>下载插件。</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20250101143338255.png"></p>
+<p>下载完成后，将解压好的整个文件放入<code>sdrsharp</code>的<code>plugin</code>文件夹：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20250101143903140.png"></p>
+<p>运行<code>sdrsharp</code>，你应该能在设置中看到它了：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20250101144028725.png"></p>
+<h5 id="连接MyDDE客户端"><a href="#连接MyDDE客户端" class="headerlink" title="连接MyDDE客户端"></a>连接MyDDE客户端</h5><p><strong>简介</strong>：点击使用<code>DDE Tracking Client</code>插件，点击<code>Options</code>将它的数据获取调整至<code>Orbitron</code>，关闭这个窗口</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20250101144513675.png"></p>
+<p><strong>点击Connect</strong>：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20250101144624996.png" alt="image-20250101144624996"></p>
+<p><strong>注意</strong>：这里一定要先打开<code>connect</code>再打开<code>My DDE</code>，否则无法连接</p>
+<p>打开Orbitron，将选项卡调整至旋转器，选择驱动程序旁边的传送数据按钮，弹出了一个My DDE Client的窗口</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20250101144753534.png"></p>
+<p>再次返回<code>SDRsharp</code>，发现已经获取到数据：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20250101145111572.png"></p>
+<p><strong>各个参数的解释</strong>：</p>
+<p><strong>Name</strong>：卫星名称</p>
+<p><strong>Downlink</strong>：下传频率</p>
+<p><strong>Azimuth</strong>：方位角</p>
+<p><strong>Elevation</strong>：仰角</p>
+<p>点击启动查看是否能自动跟随<code>Downlink</code>频率，当这两个频率在启动时能一致变化，说明多普勒频移设置成功：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20250101145642685.png"></p>
+<h4 id="虚拟声卡配置"><a href="#虚拟声卡配置" class="headerlink" title="虚拟声卡配置"></a>虚拟声卡配置</h4><p><strong>简介</strong>：由于接收到的信号是音频信号，为了解码音频，需要将SDRsharp输出的声音重新输入电脑中，给解码软件WXtoImg使用，因此，需要一个虚拟声卡软件</p>
+<h5 id="安装VB-CABLE"><a href="#安装VB-CABLE" class="headerlink" title="安装VB-CABLE"></a>安装VB-CABLE</h5><p><strong>VB-CABLE</strong>：<a target="_blank" rel="noopener" href="https://vb-audio.com/Cable/index.htm">https://vb-audio.com/Cable/index.htm</a></p>
+<p><strong>简介</strong>：进入VB-AUDIO的官网，选择windows软件包进行下载</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20250101151720812.png"></p>
+<p>新旧软件包功能都一样，只是新的兼容了arm架构。下载完成后解压安装：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20250101151840320.png"></p>
+<p>64位系统选择setup_x64，32位系统选择setup</p>
+<p>安装完成后即可选择虚拟声卡。打开右键状态栏声音小图标选择打开声音设置：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20250101152118209.png"></p>
+<p>将输入和输出全部改为虚拟声卡：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20250101152210789.png"></p>
+<p>此时虚拟声卡设置完成</p>
+<h5 id="设置WXtoimg的虚拟声卡"><a href="#设置WXtoimg的虚拟声卡" class="headerlink" title="设置WXtoimg的虚拟声卡"></a>设置WXtoimg的虚拟声卡</h5><p>选择WXtoimg，打开<code>Recording Options</code>：</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20250101153703495.png"></p>
+<p>将声卡设置为虚拟声卡，点击OK。此时WXtoimg连接声卡成功，其他软件不用设置</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20250101153805309.png"></p>
+<h4 id="收星"><a href="#收星" class="headerlink" title="收星"></a>收星</h4><p><strong>简介</strong>：上述所有软件测试并配置完成后如图所示</p>
+<p><img src="/2025/01/01/shi-yong-sdr-jie-shou-noaa/image-20250101155620044.png"></p>
+<p>此时，可以等待卫星过境并接收</p>
+<p>为了预测卫星过境情况并跟踪卫星，可以选择手机的<code>Heavens-Above</code>或者<code>Look4Sat</code>软件。这两个软件使用非常简单方便，这里就不做教程过多讲解了，感兴趣的可以看一下相关的教程</p>
+<p><strong>heavens-Above官网</strong>：<a target="_blank" rel="noopener" href="https://www.heavens-above.com/">https://www.heavens-above.com/</a></p>
+<p><strong>look4sat官网</strong>：<a target="_blank" rel="noopener" href="https://github.com/rt-bishop/Look4Sat">https://github.com/rt-bishop/Look4Sat</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">wqa</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.maxstars.xyz/2025/01/01/shi-yong-sdr-jie-shou-noaa/">https://blog.maxstars.xyz/2025/01/01/shi-yong-sdr-jie-shou-noaa/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">wqa</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                    <span class="chip bg-color">教程</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2025/01/01/shi-yong-sdr-jie-shou-noaa/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/images/noaa-15.jpg" class="responsive-img" alt="使用SDR接收NOAA气象卫星">
+                        
+                        <span class="card-title">使用SDR接收NOAA气象卫星</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-01-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%B8%9A%E4%BD%99%E6%97%A0%E7%BA%BF%E7%94%B5/" class="post-category">
+                                    业余无线电
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/04/15/flask-bi-ji/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/images/flask.png" class="responsive-img" alt="Flask笔记">
+                        
+                        <span class="card-title">Flask笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python%E6%95%99%E7%A8%8B/" class="post-category">
+                                    python教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2025</span>
+            
+            <a href="/about" target="_blank">wqa</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/maxstars247" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1101447047@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
