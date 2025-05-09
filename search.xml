@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>eNSP重启无法运行问题</title>
+      <link href="/2025/05/09/ensp-chong-qi-wu-fa-yun-xing-wen-ti/"/>
+      <url>/2025/05/09/ensp-chong-qi-wu-fa-yun-xing-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<h2 id="eNSP重启无法运行问题"><a href="#eNSP重启无法运行问题" class="headerlink" title="eNSP重启无法运行问题"></a>eNSP重启无法运行问题</h2><p><strong>简介</strong>：最近这几天练习<code>eNSP</code>时，发现重启电脑后就不能正常运行了，在启动<code>AR</code>时会报<code>40</code>错误：</p><p><img src="/2025/05/09/ensp-chong-qi-wu-fa-yun-xing-wen-ti/6e32e71e96d5439e80146b8137940e36.png"></p><p>在启动<code>CE6800</code>时会报虚拟化服务启动失败的错误：</p><p><img src="/2025/05/09/ensp-chong-qi-wu-fa-yun-xing-wen-ti/image-20250509115143240.png"></p><p>如果你出现这两种情况，查找了大部分资料都没有解决，大概率和我一样是<code>virtual box</code>的服务项<code>VboxDRV</code>没有正常启动导致的</p><h3 id="问题特征"><a href="#问题特征" class="headerlink" title="问题特征"></a>问题特征</h3><p><strong>简介</strong>：<code>eNSP</code>出现这个问题，你不必卸载所有基本环境后重新配置。想要进一步确定你的<code>virtualbox</code>有没有问题，你需要打开<code>virtualbox</code>并且启动其中任何一个镜像：</p><p><img src="/2025/05/09/ensp-chong-qi-wu-fa-yun-xing-wen-ti/image-20250509120129654.png"></p><p><strong>双击AR镜像进行启动</strong>：正常情况下你的镜像应该会正确启动</p><p><img src="/2025/05/09/ensp-chong-qi-wu-fa-yun-xing-wen-ti/image-20250509120244699.png"></p><p><strong>重启后你的virtualbox应该不能启动镜像，在eNSP下重新注册设备也不能正常运行，并且会报</strong>：</p><p><img src="/2025/05/09/ensp-chong-qi-wu-fa-yun-xing-wen-ti/image-20250509121332705.png"></p><p><img src="/2025/05/09/ensp-chong-qi-wu-fa-yun-xing-wen-ti/image-20250509121326507.png"></p><p><strong>或者报如下错误</strong>：</p><p><strong>Error relaunching VirtualBox VM process: 5<br>Command line: ‘60eaff78-4bdd-042d-2e72-669728efd737-suplib-3rdchild –comment intelios –startvm 53f35ed5-907b-4e1f-a86b-e971c2f866d0 –no-startvm-errormsgbox “–sup-hardening-log&#x3D;C:\SPB_Data\VirtualBox VMs\WinXP\Logs\VBoxHardening.log” (rc&#x3D;-104)</strong></p><p>Please try reinstalling VirtualBox.</p><p>where: supR3HardenedWinReSpawn what: 5 VERR_INVALID_NAME (-104) -<br>Invalid (malformed) file&#x2F;path name.</p><p><strong>在cmd上查看vboxdrv服务是否启动</strong>：如果你的virtualbox和eNSP都打开了，这个服务项的state仍然是stop状态，那么大概率就是出现和我一样的问题了</p><p><code>sc query vboxdrv</code></p><p><img src="/2025/05/09/ensp-chong-qi-wu-fa-yun-xing-wen-ti/image-20250509122702842.png"></p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p><strong>简介</strong>：这个方案是我在转virtualbox官方论坛时发现的，旧版本的virtualbox被装入win10后有概率会出现这个问题。</p><p><strong>链接</strong>：<a href="https://forums.virtualbox.org/viewtopic.php?f=6&t=82277">https://forums.virtualbox.org/viewtopic.php?f=6&amp;t=82277</a></p><p><strong>这里我将主要的步骤机翻并放出来</strong>：</p><p>由于某种原因，当 VboxDRV.sys 内核驱动程序在系统启动时加载并启动时，出现了一些问题。可能是我的杀毒软件挂载了它，但我还没有测试过。我尝试过禁用（而不是卸载）杀毒软件，但没有任何效果。我找到的解决方案是通过将 VboxDRV 服务的启动类型设置为“按需”来延迟其启动。这样，VboxDRV.sys 会在系统启动时加载但不启动，只在需要时才启动。方便的是，运行 VirtualBox 会触发 VboxDRV 服务启动，到那时启动过程应该已经完成​​，一切正常（打开虚拟机时不会出现上述错误）。</p><p>我发现按以下顺序操作效果最佳：</p><ol><li>完全卸载当前安装的所有 VirtualBox</li><li>重启计算机</li><li>安装最新版本的 VirtualBox</li><li>安装完成后不要重启计算机</li><li>打开注册表编辑器。“开始”&gt;“运行”&gt;“regedit”</li><li>转到：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\VBoxDrv</li><li>编辑名为 Start 的键。将其值从 1 更改为 3</li><li>关闭注册表编辑器并重启电脑。重启后，VirtualBox 应该就能正常使用了。</li></ol><p>重启后，您可以通过打开命令提示符 &gt; 输入 sc query vboxdrv &gt; 在“STATE”下显示“STOPPED”来确认 VBoxDrv 是否在启动时启动。</p><p><strong>在执行完毕上面的操作后，启动virtualbox，你的VBoxDrv状态应该还是stop的</strong>：</p><p><img src="/2025/05/09/ensp-chong-qi-wu-fa-yun-xing-wen-ti/image-20250509122702842.png"></p><p><strong>这里你需要打开eNSP，重新关联virtualbox的路径</strong>：</p><p><img src="/2025/05/09/ensp-chong-qi-wu-fa-yun-xing-wen-ti/image-20250509123302468.png"></p><p><strong>关联完成后，删除virtual内eNSP所有相关的虚拟机。删除后关闭virtualbox，打开eNSP重新注册虚拟机</strong>：</p><p><img src="/2025/05/09/ensp-chong-qi-wu-fa-yun-xing-wen-ti/image-20250509123521885.png"></p><p>注册完成后你应该可以在virtualbox内打开虚拟机镜像，并且发现state变为running状态：</p><p><img src="/2025/05/09/ensp-chong-qi-wu-fa-yun-xing-wen-ti/image-20250509123716212.png"></p><p><strong>注意</strong>：如果没有效果，你需要重新卸载<code>virtualbox</code>，并再次严格执行上述步骤，直到你的虚拟机能够打开镜像：</p><p><img src="/2025/05/09/ensp-chong-qi-wu-fa-yun-xing-wen-ti/image-20250509120244699.png"></p><p>能正确打开镜像后，你需要关闭虚拟机，打开eNSP后就能正常运行了。此时重启电脑再次打开eNSP，应该也不会进行报错。</p><p>如果上面的方法不行，你应该关注virtualbox别的服务项问题，而不是卸载重装virtualbox或者重装系统。关注杀毒软件是否禁用了相关服务项</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> win10小毛病 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 软件问题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>mix2s刷入澎湃+win10</title>
       <link href="/2025/01/28/mix2s-shua-ru-peng-pai-win10/"/>
       <url>/2025/01/28/mix2s-shua-ru-peng-pai-win10/</url>
@@ -145,7 +170,7 @@
       
         <tags>
             
-            <tag> 心得 </tag>
+            <tag> 显卡驱动 </tag>
             
         </tags>
       
