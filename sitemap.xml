@@ -327,6 +327,13 @@
   </url>
   
   <url>
+    <loc>https://blog.maxstars.xyz/categories/%E8%BD%AF%E4%BB%B6/</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.maxstars.xyz/categories/sdr%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2025-05-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -335,13 +342,6 @@
   
   <url>
     <loc>https://blog.maxstars.xyz/categories/%E5%89%8D%E7%AB%AF%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2025-05-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.maxstars.xyz/categories/%E8%BD%AF%E4%BB%B6/</loc>
     <lastmod>2025-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -362,13 +362,6 @@
   </url>
   
   <url>
-    <loc>https://blog.maxstars.xyz/categories/hexo%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2025-05-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.maxstars.xyz/categories/opencv%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2025-05-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -376,7 +369,7 @@
   </url>
   
   <url>
-    <loc>https://blog.maxstars.xyz/categories/AI%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://blog.maxstars.xyz/categories/hexo%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2025-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -384,6 +377,13 @@
   
   <url>
     <loc>https://blog.maxstars.xyz/categories/typora%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.maxstars.xyz/categories/AI%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2025-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
